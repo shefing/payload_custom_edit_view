@@ -6,6 +6,7 @@
   }
 
   .react-select {
+    z-index: 3;
     .rs__control {
       @include formInput;
       height: auto;
@@ -68,6 +69,7 @@
     &--error:hover,
     &--error:focus-within {
       div.rs__control {
+        display: inline;
         background-color: var(--theme-error-50);
         border: 1px solid var(--theme-error-500);
 
