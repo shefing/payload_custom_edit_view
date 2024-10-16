@@ -69,7 +69,6 @@
     &--error:hover,
     &--error:focus-within {
       div.rs__control {
-        display: inline;
         background-color: var(--theme-error-50);
         border: 1px solid var(--theme-error-500);
 
