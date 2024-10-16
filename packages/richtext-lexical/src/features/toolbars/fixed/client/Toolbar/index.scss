@@ -56,7 +56,7 @@
     padding: calc(var(--base) / 4);
     vertical-align: middle;
     position: sticky;
-    z-index: 2;
+    z-index: 0;
     top: var(--doc-controls-height);
     border: $style-stroke-width-s solid var(--theme-elevation-150);
     // Make it so border itself is round too and not cut off at the corners
