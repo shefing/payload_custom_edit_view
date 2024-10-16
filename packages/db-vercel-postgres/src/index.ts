@@ -97,6 +97,7 @@ export function vercelPostgresAdapter(args: Args = {}): DatabaseAdapterObj<Verce
       pgSchema: adapterSchema,
       pool: undefined,
       poolOptions: args.pool,
+      postGIS: {},
       prodMigrations: args.prodMigrations,
       push: args.push,
       relations: {},

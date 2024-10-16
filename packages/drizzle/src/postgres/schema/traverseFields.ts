@@ -6,6 +6,7 @@ import { relations } from 'drizzle-orm'
 import {
   boolean,
   foreignKey,
+  geometry,
   index,
   integer,
   jsonb,
@@ -260,6 +261,11 @@ export const traverseFields = ({
       }
 
       case 'point': {
+        adapter.postGIS.shouldCreateExtension = true
+        targetTable[fieldName] = withDefault(
+          geometry(columnName, { type: 'point', mode: 'tuple', srid: 4326 }),
+          field,
+        )
         break
       }
 
