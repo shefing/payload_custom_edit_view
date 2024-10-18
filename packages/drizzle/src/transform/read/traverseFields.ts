@@ -591,6 +591,10 @@ export const traverseFields = <T extends Record<string, unknown>>({
         const locale = table?._locale
         let val = fieldData
 
+        if (field.type === 'point') {
+          val = { coordinates: fieldData }
+        }
+
         switch (field.type) {
           case 'tab':
           case 'group': {

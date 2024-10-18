@@ -577,6 +577,9 @@ export const traverseFields = ({
       valuesToTransform.forEach(({ localeKey, ref, value }) => {
         if (typeof value !== 'undefined') {
           let formattedValue = value
+          if (field.type === 'point') {
+            formattedValue = (value as { coordinates: [number, number][] }).coordinates
+          }
 
           if (field.type === 'date') {
             if (typeof value === 'number' && !Number.isNaN(value)) {
