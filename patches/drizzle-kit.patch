@@ -1,0 +1,26 @@
+diff --git a/api.js b/api.js
+index 02efe6c136a0a132f53e84422ab8b70dd4a94305..1afee22eb2b26ecd3d8801a93bb01396181a62e4 100644
+--- a/api.js
++++ b/api.js
+@@ -39096,7 +39096,7 @@ var pushSchema = async (imports, drizzleInstance, schemaFilters) => {
+   const cur = generateDrizzleJson(imports);
+   const { schema: prev } = await pgPushIntrospect(
+     db,
+-    [],
++    ['!geography_columns', '!geometry_columns', '!spatial_ref_sys'],
+     schemaFilters ?? ["public"]
+   );
+   const validatedPrev = pgSchema.parse(prev);
+diff --git a/api.mjs b/api.mjs
+index 0d3ff62f0cde74dd32d712472f9d98b5eff5c1f6..8ea4f5fa2f27d4c6d42c9da8cb33db917d4d291a 100644
+--- a/api.mjs
++++ b/api.mjs
+@@ -39087,7 +39087,7 @@ var pushSchema = async (imports, drizzleInstance, schemaFilters) => {
+   const cur = generateDrizzleJson(imports);
+   const { schema: prev } = await pgPushIntrospect(
+     db,
+-    [],
++    ['!geography_columns', '!geometry_columns', '!spatial_ref_sys'],
+     schemaFilters ?? ["public"]
+   );
+   const validatedPrev = pgSchema.parse(prev);

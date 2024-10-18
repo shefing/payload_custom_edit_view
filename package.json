@@ -192,6 +192,9 @@
       "react": "$react",
       "react-dom": "$react-dom",
       "typescript": "$typescript"
+    },
+    "patchedDependencies": {
+      "drizzle-kit": "patches/drizzle-kit.patch"
     }
   },
   "overrides": {
