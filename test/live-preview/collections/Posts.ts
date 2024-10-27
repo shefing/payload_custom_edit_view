@@ -18,6 +18,15 @@ export const Posts: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['id', 'title', 'slug', 'createdAt'],
+    components: {
+      views: {
+        edit: {
+          default: {
+            Component: '/components/CustomEditView',
+          },
+        },
+      },
+    },
   },
   fields: [
     {
